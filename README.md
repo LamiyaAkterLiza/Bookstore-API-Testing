@@ -34,7 +34,7 @@
 - **Objective**: Verify if the provided user credentials are valid.
 
 ## 🚀 How to Run Tests  
-1. Open **Evershop** [Website](https://bookstore.demoqa.com)
+1. Open **Bookstore_Site** [Website](https://bookstore.demoqa.com)
 2. Use **Postman** to open json file for search and add a product to the cart.
 3. Use **Newman** for automation test report.  
 
