@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "e174ace9-c954-45f7-ba89-db814b9830f5",
+		"name": "Endpoint Documentation for Testing BASE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41199097"
+	},
+	"item": [
+		{
+			"name": "Task 1: Test Book Listing",
+			"item": [
+				{
+					"name": "Book List Details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"books\": [\r\n    {\r\n      \"isbn\": \"123456789\",\r\n      \"title\": \"Design Patterns\",\r\n      \"subTitle\": \"A JavaScript and jQuery Developer's Guide\",\r\n      \"author\": \"Lamiya\",\r\n      \"publish_date\": \"2024-02-04\",\r\n      \"pages\": 150,\r\n      \"description\": \"This book teaches design patterns.\",\r\n      \"website\": \"https://ostad.com\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bookstore.demoqa.com/BookStore/v1/Books",
+							"protocol": "https",
+							"host": [
+								"bookstore",
+								"demoqa",
+								"com"
+							],
+							"path": [
+								"BookStore",
+								"v1",
+								"Books"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task 2: Creating a new user",
+			"item": [
+				{
+					"name": "User Creation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userName\": \"lamiya123\",\r\n  \"password\": \"Testing@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bookstore.demoqa.com/Account/v1/User",
+							"protocol": "https",
+							"host": [
+								"bookstore",
+								"demoqa",
+								"com"
+							],
+							"path": [
+								"Account",
+								"v1",
+								"User"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task 3: Assign two books to a user",
+			"item": [
+				{
+					"name": "add two books",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImxhbWl5YTEyMyIsInBhc3N3b3JkIjoiVGVzdGluZ0AxMjMiLCJpYXQiOjE3MzkyOTg2MDZ9.H4gNG07qyhK_Z2fVOpqWXYq1So21XaBRTitmn4Uc_10",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImxhbWl5YTEyMyIsInBhc3N3b3JkIjoiVGVzdGluZ0AxMjMiLCJpYXQiOjE3Mzg2OTEzNjR9.PMzWspnaWgOa94qF50-dSiyWSD9DOQD1_HVGghoTs6U",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"ed416ad2-c7c0-45a6-b79e-61ca42b012f4\",\r\n    \"collectionOfIsbns\": [\r\n        {\r\n            \"isbn\": \"12314236\"\r\n        },\r\n        {\r\n            \"isbn\": \"29873678\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bookstore.demoqa.com/BookStore/v1/Books",
+							"protocol": "https",
+							"host": [
+								"bookstore",
+								"demoqa",
+								"com"
+							],
+							"path": [
+								"BookStore",
+								"v1",
+								"Books"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task 4: Create a token",
+			"item": [
+				{
+					"name": "Token Generation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"lamiya123\",\r\n    \"password\": \"Testing@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bookstore.demoqa.com/Account/v1/GenerateToken",
+							"protocol": "https",
+							"host": [
+								"bookstore",
+								"demoqa",
+								"com"
+							],
+							"path": [
+								"Account",
+								"v1",
+								"GenerateToken"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task 5: Verify Login View",
+			"item": [
+				{
+					"name": "Login view",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userName\": \"lamiya123\",\r\n  \"password\": \"Testing@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bookstore.demoqa.com/Account/v1/Authorized",
+							"protocol": "https",
+							"host": [
+								"bookstore",
+								"demoqa",
+								"com"
+							],
+							"path": [
+								"Account",
+								"v1",
+								"Authorized"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
