@@ -35,7 +35,7 @@
 
 ## 🚀 How to Run Tests  
 1. Open **Bookstore_Site** [Website](https://bookstore.demoqa.com)
-2. Use **Postman** to open json file for search and add a product to the cart.
+2. Use **Postman** to open json file for focusing on user creation, book listing, token generation, authentication, and book assignment.
 3. Use **Newman** for automation test report.  
 
 
