@@ -8,27 +8,31 @@
 ## ✅ Test Cases & Descriptions
 
 ### 📚 Test Book Listing 
-
 - **Method**: `GET`
 - **Endpoint**: `/BookStore/v1/Books`
 - **Objective**: Fetch all available books from the store.
-- **Expected Response**:
-  - `200 OK`
-  - Response JSON contains fields:
-    - `isbn`, `title`, `subTitle`, `author`, `publish_date`, `pages`, `description`, `website`
 
-### 👤 Create a New User (20 Marks)
-
+### ✅ Create a New User
 - **Method**: `POST`
 - **Endpoint**: `/Account/v1/User`
-- **Request Body**:
-```json
-{
-  "userName": "yourUsername",
-  "password": "yourPassword"
-}
+- **Objective**: Create a new user account using a username and password.
 
-### 👤  Assign 2 books to user with authentication
+###✅ Assign Books to User
+- **Method**: `POST`
+- **Endpoint**: `/BookStore/v1/Books`
+- **Objective**: Assign two books to a registered user using their userId and book isbn.
+- **Security**: Requires Basic Authentication.
+
+###✅ Generate Token
+- **Method**: `POST`
+- **Endpoint**: `/Account/v1/GenerateToken`
+- **Objective**: Generate an authentication token using username and password.
+
+###✅ Verify Login Authorization
+- **Method**: `POST`
+- **Endpoint**: `/Account/v1/Authorized`
+- **Objective**: Verify if the provided user credentials are valid.
+
 
 
 
